@@ -66,7 +66,7 @@ const Timer = () => {
           }
         }
       }
-    }, 10);
+    }, 1000);
     return () => {
       clearInterval(countdown);
     };
