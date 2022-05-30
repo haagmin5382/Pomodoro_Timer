@@ -8,10 +8,16 @@ const HeaderContainer = styled.header`
   background-color: tomato;
   color: rgb(16, 134, 70);
   font-size: 3vw;
+
+  > button {
+    position: absolute;
+    right: 0;
+    font-size: 3vw;
+  }
 `;
 
 const Header = () => {
-  return <HeaderContainer>Pomodoro Timer</HeaderContainer>;
+  return <HeaderContainer>Pomodoro Timer </HeaderContainer>;
 };
 
 export default Header;
