@@ -51,7 +51,6 @@ const Timer = () => {
               console.log('휴식 끝');
               setRest(false);
               setMinutes(25);
-              // dispatch(setPomo({ pomoNum: [...pomo, 1] }));
               increasePomo();
               clearInterval(countdown);
             }
