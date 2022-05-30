@@ -3,6 +3,9 @@ import c3 from 'c3';
 import { useSelector } from 'react-redux';
 const Chart = () => {
   const dayPomo = useSelector(state => state.pomo.value.dayPomo);
+  const totalPomo = dayPomo.slice(dayPomo.length - 5, dayPomo.length);
+  //   window.localStorage.setItem('totalPomo',dayPomo);
+  //   const totalPomo = window.localStorage.getItem('totalPomo');
   useEffect(() => {
     c3.generate({
       bindto: '#chart',
@@ -10,7 +13,7 @@ const Chart = () => {
         x: 'x',
         columns: [
           ['x', '4일전', '3일전', '2일전', '어제', '오늘'],
-          ['뽀모', ...dayPomo],
+          ['뽀모', ...totalPomo],
         ],
         type: 'bar',
         colors: {
