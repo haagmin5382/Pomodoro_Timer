@@ -3,7 +3,10 @@ import c3 from 'c3';
 import { useSelector } from 'react-redux';
 const Chart = () => {
   const dayPomo = useSelector(state => state.pomo.value.dayPomo);
-  const totalPomo = dayPomo.slice(dayPomo.length - 5, dayPomo.length);
+  const totalPomo = dayPomo.slice(
+    dayPomo.length >= 5 ? dayPomo.length - 5 : 0,
+    dayPomo.length,
+  );
   //   window.localStorage.setItem('totalPomo',dayPomo);
   //   const totalPomo = window.localStorage.getItem('totalPomo');
   useEffect(() => {
