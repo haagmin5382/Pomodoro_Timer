@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import c3 from 'c3';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+
+const ChartContainer = styled.div`
+  margin-top: 10vh;
+`;
+
 const Chart = () => {
   const dayPomo = useSelector(state => state.pomo.value.dayPomo);
   const totalPomo = dayPomo.slice(
@@ -31,7 +37,7 @@ const Chart = () => {
     });
     console.log(dayPomo);
   }, [dayPomo]);
-  return <div id="chart"></div>;
+  return <ChartContainer id="chart"></ChartContainer>;
 };
 
 export default Chart;
