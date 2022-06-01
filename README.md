@@ -1,70 +1,16 @@
-# Getting Started with Create React App
+# 뽀모도로 공부법을 위한 타이머
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+효율적으로 시간을 쓰기 위한 뽀모도로 학습을 위한 타이머입니다.
 
-## Available Scripts
+## 타이머 기능
 
-In the project directory, you can run:
+공부시간 25분 , 휴식시간 5분 한 세트이고 뽀모도로 학습법에 따라 4세트 마다 휴식시간이 5분이 아닌 30분이 주어집니다.
+25분이 지나면 휴식시간 5분 4세트 때는 30분으로 타이머가 작동합니다. 각 공부시간과 휴식시간을 놓치기 않기 위해서 시간이 끝나면 소리가 나서 사용자에게 알립니다.
 
-### `npm start`
+### 차트
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+각 하루마다 얼마나 뽀모를 채웠는지 C3.js 라이브러리를 통해 구현했습니다. 공부 마치기를 누르면 오늘 공부한 셋트(뽀모)만큼 기록이 됩니다. 차트에는 5일치 만큼의 기록이 나오게 됩니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 상태관리
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+redux-toolkit으로 상태를 관리했고 redux-persist를 사용해서 상태를 저장할 수 있게 했습니다.
