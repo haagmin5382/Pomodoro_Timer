@@ -35,7 +35,6 @@ const Chart = () => {
         },
       },
     });
-    console.log(dayPomo);
   }, [dayPomo]);
   return <ChartContainer id="chart"></ChartContainer>;
 };

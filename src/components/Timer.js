@@ -86,7 +86,7 @@ const Timer = () => {
               setSeconds(59);
               setMinutes(parseInt(minutes) - 1);
             } else {
-              console.log('휴식 끝');
+              // 휴식 끝
               setRest(false);
               setMinutes(25);
               increasePomo(); // 휴식이 끝나면 뽀모 갯수 증가
@@ -102,7 +102,7 @@ const Timer = () => {
               setSeconds(59);
               setMinutes(parseInt(minutes) - 1);
             } else {
-              console.log('휴식 시작');
+              // 휴식 시작
               bgm.play();
               setRest(true);
               if (pomo.length !== 0 && pomo.length % 4 === 0) {
