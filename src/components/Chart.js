@@ -33,6 +33,15 @@ const Chart = () => {
         x: {
           type: 'category',
         },
+        y: {
+          max: 10,
+          min: 1,
+          tick: {
+            format: y => {
+              return y + ' 세트';
+            },
+          },
+        },
       },
     });
   }, [dayPomo]);
