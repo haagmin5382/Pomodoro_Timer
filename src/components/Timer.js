@@ -68,6 +68,9 @@ const Timer = () => {
     bgm.play();
   };
   const increaseDayPomo = () => {
+    setStart(false);
+    setMinutes(25);
+    setSeconds(0);
     dispatch(
       setPomo({
         pomoNum: [],
