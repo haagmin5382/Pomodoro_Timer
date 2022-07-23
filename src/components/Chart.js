@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import c3 from 'c3';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-
+// import { today } from './Timer';
 const ChartContainer = styled.div`
   margin-top: 10vh;
 `;
@@ -15,14 +15,15 @@ const Chart = () => {
   );
   //   window.localStorage.setItem('totalPomo',dayPomo);
   //   const totalPomo = window.localStorage.getItem('totalPomo');
+
   useEffect(() => {
     c3.generate({
       bindto: '#chart',
       data: {
         x: 'x',
         columns: [
-          ['x', '5일전', '4일전', '3일전', '2일전', '어제'],
-          ['뽀모', ...totalPomo],
+          ['x', ...totalPomo.map(obj => obj.Date)],
+          ['뽀모', ...totalPomo.map(obj => obj.TotalPomo)],
         ],
         type: 'bar',
         colors: {
