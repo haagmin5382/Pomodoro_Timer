@@ -1,23 +1,32 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const HeaderContainer = styled.header`
-  width: 100vw;
-  height: 10vh;
-  text-align: center;
-  background-color: tomato;
-  color: rgb(16, 134, 70);
-  font-size: 3vw;
-
-  > button {
-    position: absolute;
-    right: 0;
-    font-size: 3vw;
-  }
-`;
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
 const Header = () => {
-  return <HeaderContainer>Pomodoro Timer </HeaderContainer>;
+  return (
+    <header>
+      <AppBar position="static" sx={{ textAlign: 'center' }}>
+        <Toolbar variant="dense" sx={{ background: 'tomato', color: 'green' }}>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 800,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            뽀모도로 타이머
+          </Typography>
+        </Toolbar>
+      </AppBar>{' '}
+    </header>
+  );
 };
 
 export default Header;

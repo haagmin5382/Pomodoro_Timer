@@ -1,46 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPomo } from '../redux/pomo';
-import styled from 'styled-components';
 
-const TimerContainer = styled.div`
-  text-align: center;
-  font-size: 5vw;
-`;
+import { Button } from '@mui/material';
 
-const PomoButton = styled.button`
-  background-color: tomato;
-  border-radius: 10px;
-  color: white;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 1vw;
-  padding: 10px;
-`;
+import CardContent from '@mui/material/CardContent';
 
-const PomoStopButton = styled.button`
-  background-color: rgb(16, 134, 70);
-  border-radius: 10px;
-  color: white;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 1vw;
-  padding: 10px;
-`;
+import Typography from '@mui/material/Typography';
 
-const FinishStudyButton = styled.button`
-  background-color: black;
-  border-radius: 10px;
-  color: white;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 1vw;
-  padding: 10px;
-`;
-
+const day = new Date();
+export const today = `${day.getFullYear()}년 ${
+  day.getMonth() + 1
+}월 ${day.getDate()}일`;
 const Timer = () => {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
@@ -74,7 +45,7 @@ const Timer = () => {
     dispatch(
       setPomo({
         pomoNum: [],
-        dayPomo: [...dayPomo, pomo.length],
+        dayPomo: [...dayPomo, { Date: today, TotalPomo: pomo.length }],
       }),
     );
 
@@ -126,19 +97,46 @@ const Timer = () => {
       clearInterval(countdown);
     };
   }, [start, minutes, seconds, rest]);
-  return (
-    <TimerContainer>
-      <div>
-        {rest ? '휴식 시간' : '공부 시간'}
-        {minutes}:{seconds}
-      </div>
 
-      <PomoButton onClick={startTimer}>뽀모 시작</PomoButton>
-      <PomoStopButton onClick={stopTimer}>타이머 일시정지</PomoStopButton>
-      <FinishStudyButton onClick={increaseDayPomo}>
-        공부 마치기
-      </FinishStudyButton>
-    </TimerContainer>
+  return (
+    <main>
+      <CardContent sx={{ textAlign: 'center' }}>
+        <Typography
+          sx={{ fontSize: '2vw' }}
+          color="text.secondary"
+          gutterBottom
+        >
+          {today}
+        </Typography>
+
+        <Typography sx={{ mb: 1.5, fontSize: '2vw' }} color="text.secondary">
+          {rest ? '휴식 시간' : '공부 시간 '}
+          {minutes}:{seconds}
+        </Typography>
+
+        <Button
+          variant="contained"
+          onClick={startTimer}
+          sx={{ background: 'tomato' }}
+        >
+          뽀모 시작
+        </Button>
+        <Button
+          variant="contained"
+          onClick={stopTimer}
+          sx={{ background: 'green', marginLeft: '1vw', marginRight: '1vw' }}
+        >
+          타이머 일시정지
+        </Button>
+        <Button
+          variant="contained"
+          onClick={increaseDayPomo}
+          sx={{ background: 'black' }}
+        >
+          공부 마치기
+        </Button>
+      </CardContent>
+    </main>
   );
 };
 
