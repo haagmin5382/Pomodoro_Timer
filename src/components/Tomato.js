@@ -18,7 +18,6 @@ const Tomato = () => {
 
   return (
     <div>
-      <span></span>
       <Stack
         direction="row"
         divider={<Divider orientation="vertical" flexItem />}
