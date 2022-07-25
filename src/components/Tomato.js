@@ -18,6 +18,9 @@ const Tomato = () => {
 
   return (
     <div>
+      <span>
+        <div>오늘의 뽀모</div>
+      </span>
       <Stack
         direction="row"
         divider={<Divider orientation="vertical" flexItem />}

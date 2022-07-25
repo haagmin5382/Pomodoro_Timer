@@ -35,7 +35,7 @@ const Chart = () => {
           type: 'category',
         },
         y: {
-          max: 25,
+          max: 10,
           min: 1,
           tick: {
             format: y => {
