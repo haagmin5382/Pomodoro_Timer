@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'Edu VIC WA NT Beginner';
-  src: url('./font/EduVICWANTBeginner-Bold.ttf') format('woff');
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600&display=swap');
 .App {
   text-align: center;
   font-family: 'Edu VIC WA NT Beginner';
