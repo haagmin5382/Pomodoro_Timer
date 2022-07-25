@@ -4,7 +4,7 @@ import Main from './pages/Main';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
