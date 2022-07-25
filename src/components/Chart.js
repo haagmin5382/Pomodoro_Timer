@@ -15,7 +15,7 @@ const Chart = () => {
   );
   //   window.localStorage.setItem('totalPomo',dayPomo);
   //   const totalPomo = window.localStorage.getItem('totalPomo');
-
+  console.log(totalPomo);
   useEffect(() => {
     c3.generate({
       bindto: '#chart',
