@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import c3 from 'c3';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-// import { today } from './Timer';
+import { today } from './Timer';
 const ChartContainer = styled.div`
   margin-top: 10vh;
 `;
@@ -22,8 +22,16 @@ const Chart = () => {
       data: {
         x: 'x',
         columns: [
-          ['x', ...totalPomo.map(obj => obj.Date)],
-          ['뽀모', ...totalPomo.map(obj => obj.TotalPomo)],
+          [
+            'x',
+            ...totalPomo.map(obj => (obj.Date === null ? today : obj.Date)),
+          ],
+          [
+            '뽀모',
+            ...totalPomo.map(obj =>
+              obj.TotalPomo === null ? 0 : obj.TotalPomo,
+            ),
+          ],
         ],
         type: 'bar',
         colors: {
