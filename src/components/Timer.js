@@ -113,13 +113,7 @@ const Timer = () => {
           {rest ? '휴식 시간' : '공부 시간 '}
           {minutes}:{seconds}
         </Typography>
-        <Button
-          variant="contained"
-          onClick={increasePomo}
-          sx={{ background: 'tomato' }}
-        >
-          뽀모 증가
-        </Button>
+
         <Button
           variant="contained"
           onClick={startTimer}
