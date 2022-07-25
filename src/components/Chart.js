@@ -12,7 +12,7 @@ const Chart = () => {
   //   const totalPomo = window.localStorage.getItem('totalPomo');
   console.log(totalPomo);
   useEffect(() => {
-    if (totalPomo.length) {
+    if (totalPomo[totalPomo.length - 1]?.TotalPomo) {
       const chart = d3
         .select('#chart')
         .append('svg')
