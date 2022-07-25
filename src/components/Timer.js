@@ -133,7 +133,7 @@ const Timer = () => {
           onClick={increaseDayPomo}
           sx={{ background: 'black' }}
         >
-          공부 마치기
+          오늘 공부 마치기
         </Button>
       </CardContent>
     </main>
